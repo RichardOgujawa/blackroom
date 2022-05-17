@@ -1,0 +1,709 @@
+/*-------------*/
+/*Header       */
+/*-------------*/
+header {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    height: 5rem; 
+    border-bottom: 3px solid black;
+    width: 100%; 
+    z-index: 99;
+    overflow: hidden;
+}
+
+nav {
+    --gap: 2.5em;
+    grid-template-columns: 30% auto; 
+    height: 100%;
+    padding-inline: 7vw;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_logo_img_container {
+    width: 100%;
+    height: 100%;
+    flex-basis: 30%;
+    align-items: center; 
+    justify-content: start;
+}
+
+.nav_logo_img {
+    height: 50%;
+    
+}
+.nav_link_container {
+    --gap: 4em;
+    align-self: stretch;
+    align-items: center;
+    font-weight: 700;
+}
+
+a.active {
+    color: hsl(var(--clr-accent, 4 78% 75%));
+}
+
+.nav_link_container li{
+    position: relative;
+    height: 65%;
+    align-self: end; 
+    
+}
+
+.nav_link_container li::after{
+    content: ""; 
+    position: absolute; 
+    top: 100%; 
+    transform: translateY(-100%);
+    left: 0;
+    height: 0.5em;
+    width: 100%;
+    background-color: hsl(var(--clr-accent, 4 78% 75%));
+    border: 2px solid hsl(var(--clr-dark, 26 35% 9%));
+    opacity: 0;
+}
+
+.nav_link_container li:hover::after {
+    opacity: 1;
+}
+
+.mobile_toggle_icon {
+    display: none;
+}
+
+.search_container {
+    display: none;
+}
+
+
+
+/*-------------*/
+/*Body         */
+/*-------------*/
+.hero {
+    z-index: 1;
+    height: 100vh;
+    padding: 0.5em;
+    padding-top: 5rem;
+    grid-template-columns: 65% auto; 
+    grid-template-rows: 75% auto;
+    grid-template-areas: 
+    "trad-img fish-img"
+    "cta-btn-container fish-img";
+}
+
+
+/*-------------*/
+/*Hero         */
+/*-------------*/ 
+.trad_img_container {
+    grid-area: trad-img;
+    background-image: url('images/modern-art-with-traditional-taste\(1\).svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.fish_img_container {
+    grid-area: fish-img;
+    background-image: url('/images/fish-illustration-w-color\(1\).png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.cta_btn_container {
+    grid-area: cta-btn-container;
+    align-items: center;
+}
+
+[type="search"]::placeholder {
+    color: hsl(var(--clr-dark, 26 35% 9%));
+}
+
+
+
+/*----------------*/
+/*Exhibition      */
+/*----------------*/
+#our-exhibitions {
+    padding-top: 5em;
+}
+
+.exhibitions {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 6rem);
+    margin-left: 7vw;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    grid-template-columns: 35% auto;
+    grid-template-rows: 15% 10% 52.5% auto;
+    grid-column-gap: 5em;
+    grid-row-gap: 0.5em;
+    grid-template-areas: 
+    "exhibition-details exhibition-carousel"
+    "exhibition-hr exhibition-carousel"
+    "exhibition-about exhibition-carousel"
+    "exhibition-summary exhibition-carousel"
+}
+
+/*Exhibition Left-Hand Side*/
+/*Details*/
+.details {
+    grid-area: exhibition-details;
+    --gap: 0em;
+    flex-direction: column;
+}
+
+.details_hr_container {
+    grid-area: exhibition-hr;
+    align-items: center;    
+}
+
+.details_hr{
+    height: 0.23em;
+    width: 10%;
+}
+
+/*About*/
+.about_details {
+    padding-bottom: 0.5em;
+}
+
+/*Summary*/
+.summary_grid {
+    grid-area: exhibition-summary;
+    --gap: 0.2em;
+    padding: 0.2em;
+    grid-template-columns: 50% 25% auto; 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-template-areas: 
+    "artist-name date date"
+    "job-title job-title share"
+    "exhibition-name exhibition-name share"; 
+    background: hsl(var(--clr-dark, 26 35% 9%));
+}
+
+.summary_grid > * {
+    padding: 0.25em;
+    place-items: center;
+}
+
+.artist_name {
+    grid-area: artist-name;
+}
+
+.date {
+    grid-area: date;
+}
+
+.job_title {
+    grid-area: job-title;
+}
+
+.exhibition_name {
+    grid-area: exhibition-name;
+}
+
+.share_btn {
+    grid-area: share;
+    border: none;
+    
+}
+
+.share_btn:hover {
+    background-color: hsl(var(--clr-accent, 4 78% 75%))
+}
+
+/*Exhibition Rs*/
+.exhibition_carousel {
+    grid-area: exhibition-carousel;
+    --gap: 0em;
+    overflow: hidden;
+    outline: 3px solid transparent;
+}
+
+.exhibition_carousel_container {
+    align-items: center;
+    transition: transform var(--speed) ease-in-out;
+    transform: translateX(0px);
+    height: 100%;
+}
+
+.carousel_img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Exhibition Overlay*/
+.prev_next_btn_container {
+    --gap:0em;
+    position: absolute;
+    top: 40%; 
+    left: 38%;
+    width: 5em;
+    justify-content: space-between;
+    aspect-ratio: 2/1;
+}
+
+.prev_btn, .next_btn {
+    border: none;
+    width: 100%;
+    
+}
+
+:where(.prev_btn, .next_btn):hover {
+    background-color: hsl(var(--clr-accent, 4 78% 75%))
+}
+
+.exhibition_overlay_box {
+    padding: 1.5em 3.5em 1.5em 2.5em;
+    position: absolute; 
+    top: 70%; 
+    left: 38%; 
+}
+
+
+
+/*----------------*/
+/*Book A Ticket   */
+/*----------------*/
+#book-a-ticket {
+    padding-top: 7em;
+    margin-bottom: 0em;
+}
+
+.book_a_ticket {
+    --gap: 0.25em;
+    margin-inline: 7vw;
+    margin-top: 3em;
+    padding: 0.25em;
+    background-color: hsl(var(--clr-dark, 26 35% 9%));
+}
+
+.book_a_ticket_card {
+    flex-basis: calc(100%/3);
+    height: 30em;
+    grid-template-rows: 85% auto;
+    justify-content: space-between;
+    background-color:hsl(var(--clr-white, 26 35% 100%));
+}
+
+.card_top {
+    padding: 2em;
+    flex-basis: 60%;
+    background-image: url(../images/toshinari-cat-walking-in-snow.jpg);
+    box-shadow:inset 0 0 0 2000px hsl(35 32% 90%/ 0.85);
+}
+
+.ticket_details {
+    --gap: 0.25em;
+    flex-direction: column;
+}
+
+/*Book A Ticket Btn*/
+.book_a_ticket_btn {
+    grid-template-columns: 70% 30%;
+    align-items: center;
+    border: none;
+    outline:4px solid hsl(var(--clr-dark, 26 35% 9%));
+    background-color: hsl(var(--clr-dark, 26 35% 9%));
+}
+
+.book_a_ticket_btn:hover{
+    background-color: hsl(var(--clr-accent, 4 78% 75%));
+    /* outline: 4px solid hsl(var(--clr-accent, 4 78% 75%)); */
+}
+.book_a_ticket_btn:hover > a {
+    color: hsl(var(--clr-accent, 4 78% 75%));
+}
+
+
+
+.book_a_ticket_btn a{
+    height: 100%; 
+    align-items: center;
+    padding-left: 2em;
+    font-weight: 700;
+}
+
+/*----------------*/
+/*Get in Touch    */
+/*----------------*/
+#contact {
+    padding-top: 6em;
+    height: calc(100vh - 5rem);
+    margin-bottom: 3em;
+    
+}
+.contact_container {
+    grid-template-columns: 40% auto;
+    padding-inline: 7vw;
+    height: 100%;
+    width: 100%;
+}
+
+.contact_ls, .contact_rs {
+    --gap: 2em;
+    grid-template-rows: 5% 10% 12% 40% auto;
+}
+
+.contact_ls {
+    grid-template-areas: 
+    "."
+    "location"
+    "contact"
+    "google-maps"
+    "google-maps"
+}
+
+.contact_container h3, 
+.contact_ls > div:nth-child(3) p{
+    font-weight: 700;
+}
+
+.contact_ls > div:nth-child(1) {
+    grid-area: location;
+}
+
+.contact_ls > div:nth-child(2) {
+    grid-area: contact;
+}
+
+.contact_ls > div:nth-child(3) {
+    --gap: 1.5em;
+    grid-area: google-maps;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../images/location-icon.webp);
+    background-size: contain; 
+    background-position: top right;
+    background-repeat: no-repeat;
+    box-shadow:inset 0 0 0 2000px hsl(35 0% 100%/ 0.8);
+
+}
+
+.contact_ls > div:nth-child(3) button{
+    padding: 1em 0em;
+    width:70%;
+    border: 3px solid hsl(var(--clr-dark, 26 35% 9%));
+}
+
+.contact_ls > div:nth-child(3) button:hover{
+    background-color: hsl(var(--clr-dark, 4 78% 75%));
+    color: hsl(var(--clr-white, 26 35% 100%));
+}
+
+/*Contact RS*/
+.contact_rs{
+grid-template-areas: 
+"contact-heading"
+"contact-subtitle"
+"contact-form"
+"contact-form"
+"submit-button";
+}
+
+.contact_heading {
+    grid-area: contact-heading;
+}
+
+.contact_heading h2 {
+    font-weight: 700;
+}
+
+.contact_subtitle {
+    grid-area: contact-subtitle;
+}
+
+.contact_form {
+    --gap: 0.5em;
+    grid-area: contact-form;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact_form :where(input, textarea){
+    width: 100%;
+    padding: 1em 0em 1em 0.5em;
+    outline: 3px solid hsl(var(--clr-dark, 26 35% 9%));
+    resize: none;
+    border: none;
+    transition: outline var(--speed) ease-in-out;
+}
+
+:where(input,textarea):focus  {
+    outline: 3px solid hsl(var(--clr-accent, 4 78% 75%));
+}
+
+.contact_form input::placeholder {
+    color: hsl(var(--clr-dark, 26 35% 9%));
+}
+
+.contact_submit_btn {
+    grid-area: submit-button; 
+    align-self: start;
+    padding: 1em 0em;
+    border: none;
+    outline: 3px solid hsl(var(--clr-dark, 26 35% 9%));
+}
+
+.contact_submit_btn:hover {
+    background-color: hsl(var(--clr-accent, 4 78% 75%));
+}
+
+footer {
+    border-top: 3px solid hsl(var(--clr-dark, 26 35% 9%));
+    padding: 0.5em 0em;
+}
+
+footer a {
+    color: hsl(var(--clr-accent, 4 78% 75%));
+}
+
+
+
+
+
+
+
+
+/*----------------*/
+/*Media Queries   */
+/*----------------*/
+/*Smaller Laptop Screen*/
+@media (max-width: 1280px){
+    :root {
+        font-size: 11pt;
+    }
+
+    .hero {
+        padding-top: 10rem;
+        height: 100vh;
+    }
+}
+
+/*Tablet*/
+@media (max-width:1024px){
+
+    /*-----------------*/
+    /*Heading          */
+    /*-----------------*/
+    nav {
+    grid-template-columns: 10% auto 10%;
+    grid-template-areas: 
+    "menu-toggle logo-img search-icon" 
+    }
+
+
+    .nav_link_container {
+        display: none;
+    }
+    
+    .mobile_toggle_icon {
+        grid-area: menu-toggle;
+        display: flex;
+        align-items: start;
+        border: none;
+        
+        background-color: transparent;
+    }
+
+    .search_container{
+        --gap: 2em;
+        display: flex; 
+        flex-direction: column;
+        align-items: end;
+        position: relative;
+        transform: translateY(40%);
+    }
+
+    /*-----------------*/
+    /*Body             */
+    /*-----------------*/
+    .hero {
+        --margin-gap: 0em;
+        --padding-gap: 0em;
+        padding-top: 6em;
+        max-width: 100em;
+        background-image: url('../images/fish-illustration-mobile(2).png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center top;
+        grid-template-columns: 100%;
+        grid-template-rows: 70% auto;
+    }
+    
+    .bg_img {
+        display: none;
+    }
+    
+    
+    /*-----------------*/
+    /*Button           */
+    /*-----------------*/
+    .cta_btn_container {
+        --gap: 1.5em;
+    }
+
+    /*-----------------*/
+    /*Exhibition       */
+    /*-----------------*/
+    .exhibitions {
+        width: 100vw;
+        height: calc(125vh - 6rem);
+        margin-left: 0;
+        padding-inline: 7vw;
+        padding-top: 3em;
+        padding-bottom: 3em;
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 45% 25% auto;
+        grid-column-gap: 5em;
+        grid-row-gap: 2em;
+        grid-template-areas: 
+        "exhibition-details"
+        "exhibition-carousel"
+        "exhibition-about"
+        "exhibition-summary";
+    }
+
+    /*Details*/
+    .details {
+        grid-area: exhibition-details;
+        justify-content: center;
+    }
+
+    .details_date {
+        display: none;
+    }
+
+    .details_hr_container {
+        display: none;
+    }
+
+    /*About*/
+    .about_details {
+        width: 100%;
+    }
+    
+    .about {
+        grid-area: exhibition-about;
+    }
+    
+    /*Summary Grid*/
+    .summary_grid {
+        grid-area: exhibition-summary;
+    }
+
+    /*Exhibition Carousel*/
+    .exhibition_carousel {
+        position: relative;
+        width: 100%; 
+        height: 100%;
+        grid-area: exhibition-carousel;
+        outline: 3px solid hsl(var(--clr-dark, 26 35% 9%));
+    }
+
+    /*Exhibition Overlay*/
+    .prev_next_btn_container {
+        --gap:0em;
+        position: absolute;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        outline: 3px solid green;
+    }
+
+    .prev_btn,
+    .next_btn{
+        width: 2em;
+        aspect-ratio: 1;
+    }
+
+    .exhibition_overlay_box {
+        padding: 1.5em 3.5em 1.5em 2.5em;
+        position: absolute; 
+        top: 48%; 
+        left: 60%; 
+        width: 100%;
+        margin-right: 4%;
+    }
+
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+    :root {
+        font-size: 10pt;
+    }
+
+    .hero {
+        grid-template-rows: 75% auto;
+        height: 100vh;
+        background-position: 20%;
+        background-size: 90%;
+        background-repeat: no-repeat;
+    }
+
+    .uniform-padding-btn {
+        padding: 0.4em 0.2em;
+    }
+
+    .wide-padding-btn {
+        padding: 0.4em 0.2em;
+    }
+
+
+    .cta_btn_container {
+        --gap: min(3em, 2vh);
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+
+    /*Exhibition*/
+
+    .exhibition_overlay_box { 
+        padding: 0.7em;
+        top: 53%;
+        left: 50%; 
+        width: 100%;
+        margin-right: 4%;
+    }
+
+    /*Book A Ticket*/
+    .book_a_ticket {
+        flex-direction: column;
+    }
+
+    .book_a_ticket_card{
+        --gap: 0em;
+        justify-content: stretch;
+    }
+
+    .book_a_ticket_btn {
+        outline: none;
+        border-top: 3.5px solid black;
+    }
+}
+
+/*Small Screen*/
+@media (max-width: 414px){
+    .hero {
+        grid-template-rows: 70% auto;
+    }
+
+    /*Exhibition*/
+    .exhibitions {
+        grid-template-rows: 7% 45% 30% auto;
+        grid-row-gap: 3.5em;
+    }
+    .exhibition_overlay_box{
+        left: 40%;
+        padding: 1em 1em;
+        width: 50%;
+    }
+}

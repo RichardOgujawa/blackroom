@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BlackRoom</title>
+
+    <!--Style-->
+    <link rel="stylesheet" href="styles/setup.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="icons/blackroom-b_2_.ico" type="image/x-icon">
+
+    <!--CDNs-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body id="who-we-are">
+    <header>
+        <nav class="bg-white grid">
+            <!--Logo Img-->
+            <div class="nav_logo_img_container flex">
+                <img class="nav_logo_img pointer" src="icons/blackroom_1_.svg" alt="Blackroom Logo">
+            </div>
+
+            <!--Menu-->
+            <ul class="nav_link_container link-container list-container uppercase flex">
+                <li><a class="nav_link text-dark" href="#who-we-are">Who we are</a></li>
+                <li><a class="nav_link text-dark" href="#our-exhibitions">Our exhibitions</a></li>
+                <li><a class="nav_link text-dark" href="#book-a-ticket">Book a ticket</a></li>
+                <li><a class="nav_link text-dark" href="#contact">Contact</a></li>
+            </ul>
+
+            <!--Mobile Menu Toggle-->
+            <button class="mobile_toggle_icon pointer">
+                <i class="fa-solid fa-bars"></i>
+                <span class="sr-only">Mobile Menu Toggle</span>
+            </button>
+
+            <!--Search-->
+            <div class="search_container flex">
+                <i class="fas fa-search text-dark fs-400 pointer"></i>
+                <span class="sr-only">Search</span>
+                <input class="" type="search" placeholder="" name="Search">
+            </div>
+
+            <!--Mobile Nav-->
+            <!-- <div class="mobile_nav_link_container">
+                <ul class="nav_link_container link-container list-container uppercase flex">
+                    <li><a class="text-dark" href="#">Who we are</a></li>
+                    <li><a class="text-dark" href="#">Our exhibitions</a></li>
+                    <li><a class="text-dark" href="#">Book ticket</a></li>
+                    <li><a class="text-dark" href="#">Contact</a></li>
+                </ul>
+            </div> -->
+
+        </nav>
+
+
+    </header>
+
+    <!--Hero-->
+    <section class="hero grid container">
+        <!--Modern Art with Traditional Taste Image-->
+        <div class="trad_img_container bg_img">
+            <img class="trad_img" src="images/modern-art-with-traditional-taste(1).svg"
+                alt="A line of text which reads 'Modern Art with Traditional Taste'">
+        </div>
+
+        <!--Fish Image-->
+        <div class="fish_img_container grid bg_img">
+            <!-- <img class="fish_img" src="images/fish-illustration-w-color(1).png" alt="Illustration of Fish"> -->
+        </div>
+
+        <!--CTA Button-->
+        <div class="cta_btn_container fill-space flex center">
+            <a href="#" class="wide-padding-btn accent-btn link text-dark uppercase fs-500">Book a ticket</a>
+            <a href="#" class="uniform-padding-btn white-btn link text-dark uppercase fs-500">See our exhibitions</a>
+        </div>
+
+    </section>
+
+    <!--Exhibition-->
+    <section id="our-exhibitions">
+        <section class="exhibitions text-dark grid">
+            <!--Details-->
+            <section class="details flex">
+                <p class="details_date uppercase text-accent bold">30 Jan 2020 - 18 May 2020</p>
+                <h2 class="details_art_name uppercase bold fs-600">Tabineko</h2>
+                <p class="details_artist_name uppercase text-accent bold">By Toshinori Mori</h3>
+            </section>
+            <!--Details Hr-->
+            <section class="details_hr_container flex">
+                <hr class="details_hr bg-dark-gray">
+            </section>
+            <!--About-->
+            <section class="about">
+                <h3 class="about_title bold">Our exhibition</h3>
+                <p class="about_details">
+                    Tabineko is a series of illustrations which literally means "cat goes on a trip". The series
+                    features a
+                    black cat who travels with his friends through various places, like city streets or county lanes.
+                    <br><br>
+                    Toshinori is also fascinated by the seasons, which are constantly changing Japanese landscape - you
+                    can
+                    notice this on each illustration.
+                </p>
+            </section>
+            <!--Summary-->
+            <section class="summary_grid grid">
+                <p class="artist_name grid bg-white">Toshinori Mori</p>
+                <p class="date grid bg-white">1970, Kagawa</p>
+                <p class="job_title grid bg-white">Freelance Designer</p>
+                <p class="exhibition_name grid bg-white">Actual Exhibition</p>
+                <button type="button" class="share_btn bg-dark text-white pointer">
+                    <i class="fa-solid fa-share-nodes fs-600"></i>
+                    <span class="sr-only">Share Button</span>
+                </button>
+            </section>
+            <!--Exhibition Carousel-->
+            <section class="exhibition_carousel flex">
+                <!--Image Carousel-->
+                <div class="exhibition_carousel_container flex">
+                    <img class="carousel_img" src="images/toshinari-mori-snow-sake-brewery.jpg"
+                        alt="Illustration of two cats sitting outside in the snow">
+                    <img class="carousel_img" src="images/toshinori-mori-tabineko-kyoto-flower-shop.jpg"
+                        alt="Illustration of cats following a woman past a flower shop">
+                    <img class="carousel_img" src="images/toshinori-mori-tabineko-postcards-cset.jpg"
+                        alt="Illustration of a cat leaning against a tree with a postman van nearby">
+                </div>
+                <!--Previous & Next Buttons-->
+                <section class="prev_next_btn_container flex">
+                    <button type="button" class="prev_btn bg-dark text-white pointer">
+                        <i class="fa-solid fa-chevron-left "></i>
+                        <span class="sr-only">Previous Button for Image Slideshow</span>
+                    </button>
+                    <button type="button" class="next_btn bg-dark text-white pointer">
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span class="sr-only">Next Button for Image Slideshow</span>
+                    </button>
+                </section>
+            </section>
+            <!--Exhibition About-->
+            <section class="exhibition_overlay_box bg-dark text-white">
+                <p class="exhibition_overlay_artist uppercase">Tabineko</p>
+                <p class="exhibition_overlay_art">"Snow sake brewery"</p>
+            </section>
+        </section>
+    </section>
+
+
+    <!--Book A Ticket-->
+    <section id="book-a-ticket">
+
+        <section class="book_a_ticket flex">
+
+            
+            <div class="book_a_ticket_card grid">
+                <div class="card_top">
+                    <!--Details-->
+                    <section class="ticket_details flex">
+                        <p class="uppercase text-accent bold">30 Jan - 18 May</p>
+                        <h2 class="uppercase text-dark bold fs-600">Tabineko</h2>
+                        <p class="uppercase text-accent bold">Toshinori Mori</h3>
+                    </section>
+                    <!--About Details-->
+                    <p class="ticket_about text-dark">
+                        We will visit all the corners of a typical Japanese city and we will also delve into the life of
+                        the
+                        rural areas of Japan.
+                    </p>
+                </div>
+                <!--Book A Ticket-->
+                <button class="book_a_ticket_btn grid bg-dark pointer">
+                    <a class="bg-white flex link text-dark uppercase" href="#">Book a ticket</a>
+                    <i class="fa fa-chevron-right text-white"></i>
+                </button>
+            </div>
+            
+            <div class="book_a_ticket_card grid">
+                <div class="card_top">
+                    <!--Details-->
+                    <section class="ticket_details flex">
+                        <p class="uppercase text-accent bold">01 Nov - 11 Dec</p>
+                        <h2 class="uppercase text-dark bold fs-600">Isle of dogs</h2>
+                        <p class="uppercase text-accent bold">Kamila Kozłowska</h3>
+                    </section>
+                    <!--About Details-->
+                    <p class="ticket_about text-dark">
+                        It's time to remember or discover the film 'Isla of dogs' but now, with the fascinated perspective of Kamila.
+                    </p>
+                </div>
+                <!--Book A Ticket-->
+                <button class="book_a_ticket_btn grid bg-dark pointer">
+                    <a class="bg-white flex link text-dark uppercase" href="#">Book a ticket</a>
+                    <i class="fa fa-chevron-right text-white"></i>
+                </button>
+            </div>
+            
+            <div class="book_a_ticket_card grid">
+                <div class="card_top">
+                    <!--Details-->
+                    <section class="ticket_details flex">
+                        <p class="uppercase text-accent bold">10 Nov - 07 Dec</p>
+                        <h2 class="uppercase text-dark bold fs-600">Japenese Monsters</h2>
+                        <p class="uppercase text-accent bold">Yasushi Muraki</h3>
+                    </section>
+                    <!--About Details-->
+                    <p class="ticket_about text-dark">
+                        Discovering japanese mythological monsters with MURAKI, illustrated from Tokyo.
+                    </p>
+                </div>
+                <!--Book A Ticket-->
+                <button class="book_a_ticket_btn grid bg-dark pointer">
+                    <a class="bg-white flex link text-dark uppercase" href="#">Book a ticket</a>
+                    <i class="fa fa-chevron-right text-white"></i>
+                </button>
+            </div>
+        </section>
+
+    </section>
+
+    <section id="contact">
+        <div class="contact_container grid text-dark">
+            <div class="contact_ls grid">
+                <div>
+                    <h3 class="uppercase">Madrid</h3>
+                    <p>Oxford St. 35, 190023 MADRID, Spain</p>
+                </div>
+                <div>
+                    <h3 class="uppercase">Contact Us</h3>
+                    <p>+67 889 999 222</p>
+                    <p>hello@kuroiheya.com</p>
+                </div>
+                <div class="flex">
+                    <p class="fs-500 capitalize pointer">Find us faster <br> with Google Maps</p>
+                    <button type="button" class="bg-white text-dark pointer">Go to Google Maps</button>
+                </div>
+            </div>  
+
+            <div class="contact_rs grid">
+                <div class="contact_heading">
+                    <h2 class="uppercase">Get in touch</h2>
+                </div>
+                <p>Write your message here and our team will contact you very soon.</p>
+                <form class="contact_form flex">
+                    <label for="first-name">
+                        <input type="text" placeholder="Your Name" id="first-name" name="user-first-name">
+                    </label>
+                    <label for="surname">
+                        <input type="text" placeholder="Your Surname" id="surname" name="user-surname">
+                    </label>
+                    <label for="email">
+                        <input type="emai" placeholder="Your e-mail" id="email" name="user-email">
+                    </label>
+
+                    <label for="message">
+                        <textarea placeholder="Write here your message" id="message" name="user-message"></textarea>
+                    </label>
+
+                </form>
+                
+                <input class="contact_submit_btn bg-dark text-white pointer" type="submit" value="Submit">
+            </div>
+        </div>
+    </section>
+
+    <footer class="flex center">
+        <p class="text-dark">&copy; 2022 | Designed by <a href="https://www.behance.net/lauraortegama">Lau Ortega</a>. Coded by <a href="https://github.com/RichardOgujawa/">Richard Ogujawa</a>.</p>
+    </footer>
+
+
+</body>
+
+<script src="scripts/script.js"></script>
+
+</html>
