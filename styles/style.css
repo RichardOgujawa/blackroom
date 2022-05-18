@@ -31,8 +31,13 @@ nav {
 
 .nav_logo_img {
     height: 50%;
-    
 }
+
+.nav_logo_img:focus {
+    outline: hsl(var(--clr-accent, 4 78% 75%));
+
+}
+
 .nav_link_container {
     --gap: 4em;
     align-self: stretch;
@@ -51,17 +56,8 @@ a.active {
     
 }
 
-.nav_link_container li::after{
-    content: ""; 
-    position: absolute; 
-    top: 100%; 
-    transform: translateY(-100%);
-    left: 0;
-    height: 0.5em;
-    width: 100%;
-    background-color: hsl(var(--clr-accent, 4 78% 75%));
-    border: 2px solid hsl(var(--clr-dark, 26 35% 9%));
-    opacity: 0;
+.nav_link_container li:hover a{
+    color: hsl(var(--clr-accent, 4 78% 75%));
 }
 
 .nav_link_container li:hover::after {
@@ -221,18 +217,31 @@ a.active {
     --gap: 0em;
     overflow: hidden;
     outline: 3px solid transparent;
+    width: 100%;
 }
 
 .exhibition_carousel_container {
-    align-items: center;
-    transition: transform var(--speed) ease-in-out;
-    transform: translateX(0px);
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/toshinari-mori-snow-sake-brewery.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slides {
+    width: 100%;
+    height: 100%; 
+}
+
+.slide {
+    min-width: 100%;
     height: 100%;
 }
 
 .carousel_img {
-    height: 100%;
+    /* min-width: 100%; */
     object-fit: cover;
+    display: inline-block;
 }
 
 /*Exhibition Overlay*/
@@ -494,19 +503,60 @@ footer a {
     grid-template-areas: 
     "menu-toggle logo-img search-icon" 
     }
-
-
+    
     .nav_link_container {
         display: none;
     }
-    
     .mobile_toggle_icon {
         grid-area: menu-toggle;
         display: flex;
         align-items: start;
         border: none;
-        
         background-color: transparent;
+    }
+
+    .mobile_nav_link_container {
+        position: fixed; 
+        top: 0;
+        left: 0; 
+        background-color: hsl(var(--clr-white, 26 35% 100%)/0.94);
+        border-right: 3px solid hsl(var(--clr-dark, 26 35% 9%));
+        width: 30vw;
+        height: 100vh; 
+        text-align: right;
+        font-weight: 700;
+        transform: translateX(-100%);
+        transition: transform var(--speed) ease-in-out;
+    }
+
+    [data-visible = true]{
+        transform: translateX(0%);
+    }
+    .nav_close_btn{
+        float: right;
+        border: 3px solid black;
+        border-top: none; 
+        border-right: none;
+   }
+
+   .nav_close_btn:hover {
+       background-color: hsl(var(--clr-accent, 4 78% 75%));
+   }
+
+    .mobile_nav_link_container .fa-close {
+        padding: 1em; 
+    }
+
+    .mobile_nav_link_ul {
+        flex-direction: column;
+        position: absolute;
+        right: 5%;  
+        margin-top: 6em;
+    }
+
+    .mobile_nav_link_ul a:hover, 
+    .mobile_nav_link_ul a:focus{
+        color: hsl(var(--clr-accent, 4 78% 75%));
     }
 
     .search_container{
@@ -515,7 +565,56 @@ footer a {
         flex-direction: column;
         align-items: end;
         position: relative;
-        transform: translateY(40%);
+    }
+
+    .search_alert {
+        gap: 0em;
+        position:fixed; 
+        top: 0;
+        left: 0; 
+        height: 100vh; 
+        width: 100vw;
+        background-color: hsl(var(--clr-dark, 26 35% 9%)/ 0.9);
+        align-items: center;
+        justify-content: center;
+        transition: opacity var(--speed) ease;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    [search-data-visible="true"] {
+        pointer-events: all;
+        opacity: 1;
+    }
+    .search_close_btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2em;
+        aspect-ratio: 1;
+        border: hsl(var(--clr-white, 26 35% 100%)) 3px solid;
+        border-top: 0; 
+        border-right: 0;
+    }
+    .search_close_btn:hover {
+        background-color: hsl(var(--clr-accent, 4 78% 75%));
+    }
+
+    [type="search"]{
+        background-color: transparent;
+        color: hsl(var(--clr-white, 26 35% 100%));
+        border-color: transparent transparent hsl(var(--clr-white, 26 35% 100%)) transparent;
+        transition: border-color var(--speed) ease;
+    }
+
+    [type="search"]:focus {
+        border: 3px solid hsl(var(--clr-accent, 4 78% 75%));
+        border-color: transparent transparent hsl(var(--clr-accent, 4 78% 75%)) transparent;
+        outline: none;
+    }
+
+    [type="search"]::placeholder {
+        color: hsl(var(--clr-white, 26 35% 100%));
     }
 
     /*-----------------*/
@@ -691,7 +790,12 @@ footer a {
 }
 
 /*Small Screen*/
-@media (max-width: 414px){
+@media (max-width: 415px){
+    /*Header*/
+    .mobile_nav_link_container {
+        width: 50vw;
+    }
+    /*Body*/
     .hero {
         grid-template-rows: 70% auto;
     }
@@ -706,4 +810,14 @@ footer a {
         padding: 1em 1em;
         width: 50%;
     }
+
+    .contact_form {
+        --gap: 3.25em;
+        justify-content: flex-start;
+    }
+
+    .contact_ls > div:nth-child(3) > button {
+        width: 100%;
+    }
+
 }
