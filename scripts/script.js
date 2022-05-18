@@ -59,10 +59,5 @@ var windowHeight = window.innerHeight;
 var documentHeight = document.documentElement.clientHeight;
 console.log(windowHeight, documentHeight);
 
-contact.style.height = `${windowHeight}px`
+contact.style.height = `${windowHeight + 15}px`
 
-window.addEventListener("resize", ()=>{
-    var windowHeight = window.innerHeight; 
-    var documentHeight = document.documentElement.clientHeight;
-    console.log(windowHeight, documentHeight);
-})

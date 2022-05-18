@@ -19,7 +19,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--CDN | Sharer.js-->
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
 
 </head>
 
@@ -36,7 +38,7 @@
                 <!--Menu-->
                 <ul class="nav_link_container link-container list-container uppercase flex">
                     <li><a class="nav_link text-dark" href="#who-we-are">Who we are</a></li>
-                    <li><a class="nav_link text-dark" href="#our-exhibitions">Our exhibitions</a></li>
+                    <li><a class="nav_link text-dark" href="#our-next-exhibition">Our next exhibition</a></li>
                     <li><a class="nav_link text-dark" href="#book-a-ticket">Book a ticket</a></li>
                     <li><a class="nav_link text-dark" href="#contact">Contact</a></li>
                 </ul>
@@ -58,7 +60,7 @@
                     <button type="button" class="nav_close_btn bg-dark"><i class="fa fa-close text-white pointer"></i><span class="sr-only">Close Menu Button</span></button>
                     <ul class="mobile_nav_link_ul link-container list-container uppercase flex">
                         <li><a class="text-dark" href="#who-we-are">Who we are</a></li>
-                        <li><a class="text-dark" href="#our-exhibitions">Our exhibitions</a></li>
+                        <li><a class="text-dark" href="#our-next-exhibition">Our next exhibition</a></li>
                         <li><a class="text-dark" href="#book-a-ticket">Book a ticket</a></li>
                         <li><a class="text-dark" href="#contact">Contact</a></li>
                     </ul>
@@ -89,14 +91,14 @@
             <!--CTA Button-->
             <div class="cta_btn_container fill-space flex center">
                 <a href="#book-a-ticket" class="wide-padding-btn accent-btn link text-dark uppercase fs-500">Book a ticket</a>
-                <a href="#our-exhibitions" class="uniform-padding-btn white-btn link text-dark uppercase fs-500">See our exhibitions</a>
+                <a href="#our-next-exhibition" class="uniform-padding-btn white-btn link text-dark uppercase fs-500">See next exhibition</a>
             </div>
     
         </section>
 </section>
 
     <!--Exhibition-->
-    <section id="our-exhibitions">
+    <section id="our-next-exhibition">
         <section class="exhibitions text-dark grid">
             <!--Details-->
             <section class="details flex">
@@ -110,7 +112,7 @@
             </section>
             <!--About-->
             <section class="about">
-                <h3 class="about_title bold">Our exhibition</h3>
+                <h3 class="about_title bold">Our Next Exhibition</h3>
                 <p class="about_details">
                     Tabineko is a series of illustrations which literally means "cat goes on a trip". The series
                     features a
@@ -127,7 +129,9 @@
                 <p class="date grid bg-white">1970, Kagawa</p>
                 <p class="job_title grid bg-white">Freelance Designer</p>
                 <p class="exhibition_name grid bg-white">Actual Exhibition</p>
-                <button type="button" class="share_btn bg-dark text-white pointer">
+                <button type="button" class="share_btn bg-dark text-white pointer" aria-label="Twitter Share Button"
+                data-sharer="twitter" data-title="Come check out the new Tabineko Art Exhibition!" data-hashtags="art,tabineko,exhibition"
+                data-url="https://richardogujawa.github.io/blackroom/#our-exhibitions">
                     <i class="fa-solid fa-share-nodes fs-600"></i>
                     <span class="sr-only">Share Button</span>
                 </button>
@@ -297,6 +301,7 @@
             Coded by <a href="https://github.com/RichardOgujawa/">Richard Ogujawa</a>.</p>
     </footer>
 
+    
 
 </body>
 
