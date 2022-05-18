@@ -8,6 +8,7 @@ Coding this was a great learning opportunity, I believe, because it quickly brou
 
 However, it was also good in that it helped me re-inforce a lot of the new things I've learned about HTML and CSS thus far.`);
 
+//-----------------------------------------------//
 //Change search placeholder randomly
 const artistsArr = ['Yasushi Muraki', 'Kamila Kozłowska', 'Toshinori Mori']
 
@@ -15,6 +16,9 @@ i = Math.floor(Math.random() * 3);
 
 var searchPlaceholder = document.getElementsByName('Search')[0].placeholder = artistsArr[i];
 
+
+
+//-----------------------------------------------//
 //Open and Close Navigation Menu
 const nav = document.querySelector('.mobile_nav_link_container');
 const navToggle = document.querySelector('.mobile_toggle_icon');
@@ -28,6 +32,9 @@ navClose.addEventListener('click', ()=> {
     nav.setAttribute('data-visible', false);  
 })
 
+
+
+//-----------------------------------------------//
 //Have Search Popup Fade in and Out
 const searchBox= document.querySelector('.search_alert');
 const searchIcon = document.querySelector('.search_container');
@@ -39,4 +46,23 @@ searchIcon.addEventListener('click', ()=> {
 
 searchClose.addEventListener('click', ()=> {
     searchBox.setAttribute('search-data-visible', false);  
+})
+
+
+
+//-----------------------------------------------//
+//Prevent Contact Form from resizing when Virtual Keyboard is invoked on mobile
+const contact = document.getElementById('contact'); 
+console.log(contact);
+
+var windowHeight = window.innerHeight; 
+var documentHeight = document.documentElement.clientHeight;
+console.log(windowHeight, documentHeight);
+
+contact.style.height = `${windowHeight}px`
+
+window.addEventListener("resize", ()=>{
+    var windowHeight = window.innerHeight; 
+    var documentHeight = document.documentElement.clientHeight;
+    console.log(windowHeight, documentHeight);
 })

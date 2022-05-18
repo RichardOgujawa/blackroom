@@ -340,7 +340,7 @@ a.active {
 /*----------------*/
 #contact {
     padding-top: 6em;
-    height: calc(100vh - 5rem);
+    height: calc(1000% - 5rem);
     margin-bottom: 3em;
     
 }
@@ -391,13 +391,14 @@ a.active {
 
 }
 
-.contact_ls > div:nth-child(3) button{
+.contact_ls > div:nth-child(3) a{
     padding: 1em 0em;
+    text-align: center;
     width:70%;
     border: 3px solid hsl(var(--clr-dark, 26 35% 9%));
 }
 
-.contact_ls > div:nth-child(3) button:hover{
+.contact_ls > div:nth-child(3) a:hover{
     background-color: hsl(var(--clr-dark, 4 78% 75%));
     color: hsl(var(--clr-white, 26 35% 100%));
 }
@@ -824,12 +825,18 @@ footer a {
     }
 
     .contact_form {
-        --gap: 3.25em;
+        --gap: 1.25em;
         justify-content: flex-start;
     }
 
-    .contact_ls > div:nth-child(3) > button {
+    .contact_ls > div:nth-child(3) > a {
         width: 100%;
     }
 
+}
+
+@media (max-width: 380px){
+    :root {
+        font-size: 9pt;
+    }
 }
