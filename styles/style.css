@@ -445,8 +445,8 @@ grid-template-areas:
     outline: 3px solid hsl(var(--clr-accent, 4 78% 75%));
 }
 
-.contact_form input::placeholder {
-    color: hsl(var(--clr-dark, 26 35% 9%));
+.contact_form input::placeholder, .contact_form textarea::placeholder {
+    color: gray;
 }
 
 .contact_submit_btn {
